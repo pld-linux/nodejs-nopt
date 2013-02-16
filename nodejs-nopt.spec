@@ -1,19 +1,18 @@
-%define		git_hash 51b1869
 %define		pkg	nopt
 Summary:	Node.js option parsing
 Name:		nodejs-%{pkg}
-Version:	1.0.10
-Release:	2
+Version:	2.1.1
+Release:	1
 License:	MIT
 Group:		Development/Libraries
 URL:		https://github.com/isaacs/nopt
-# download from https://github.com/isaacs/%{pkg}/tarball/%%{version}
-Source0:	isaacs-%{pkg}-%{version}-0-g%{git_hash}.tar.gz
-# Source0-md5:	d72434b028241bd406a48d29eec64656
+Source0:	http://registry.npmjs.org/%{pkg}/-/%{pkg}-%{version}.tgz
+# Source0-md5:	b2cf204cb26969c04e2af14edf0b23ab
 BuildRequires:	rpmbuild(macros) >= 1.634
 BuildRequires:	sed >= 4.0
 Requires:	nodejs
-Requires:	nodejs-abbrev
+Requires:	nodejs-abbrev >= 1.0.0
+Requires:   nodejs-abbrev < 2.0.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,7 +21,7 @@ An option parsing library for Node.js and its package manager (npm).
 
 %prep
 %setup -qc
-mv isaacs-%{pkg}-*/* .
+mv package/* .
 
 %{__sed} -i -e '1s,^#!.*node,#!/usr/bin/node,' bin/*
 
