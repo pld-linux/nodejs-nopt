@@ -11,8 +11,8 @@ Source0:	http://registry.npmjs.org/%{pkg}/-/%{pkg}-%{version}.tgz
 BuildRequires:	rpmbuild(macros) >= 1.634
 BuildRequires:	sed >= 4.0
 Requires:	nodejs
+Requires:	nodejs-abbrev < 2.0.0
 Requires:	nodejs-abbrev >= 1.0.0
-Requires:   nodejs-abbrev < 2.0.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
