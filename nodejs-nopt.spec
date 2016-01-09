@@ -1,13 +1,13 @@
 %define		pkg	nopt
 Summary:	Node.js option parsing
 Name:		nodejs-%{pkg}
-Version:	2.2.0
+Version:	2.2.1
 Release:	1
 License:	MIT
 Group:		Development/Libraries
-URL:		https://github.com/isaacs/nopt
 Source0:	http://registry.npmjs.org/%{pkg}/-/%{pkg}-%{version}.tgz
-# Source0-md5:	8e04195a49bb359203ea41b6d6a3e8f0
+# Source0-md5:	6df8e09cf90437580e36a299c8a9eb02
+URL:		https://github.com/isaacs/nopt
 BuildRequires:	rpmbuild(macros) >= 1.634
 BuildRequires:	sed >= 4.0
 Requires:	nodejs
